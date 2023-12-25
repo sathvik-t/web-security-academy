@@ -1,5 +1,4 @@
-
-
+**Directory traversal**
 It allows attacker to read files on the server that is running the application. Usually `passwd` file is used to exploit because it’s readable, and can be accessed during whatever the privilege the user has.
 
 Impact:
